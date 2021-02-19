@@ -79,7 +79,7 @@ function loadtoc(json) {
             var pll = '';
             if ("category" in entry) {
                for (var k = 0; k < entry.category.length; k++) {
-                  pll += '<a href="javascript:filterPosts(\'' + entry.category[k].term + '\');" title="Nhấp vào đây để chọn tất cả các bài đăng có nhãn \'' + entry.category[k].term + '\'">' + entry.category[k].term + '</a>,  ';
+                  pll += '<a href="javascript:filterPosts(\'' + entry.category[k].term + '\');" title="Klik di sini untuk memilih semua siaran berlabel\'' + entry.category[k].term + '\'">' + entry.category[k].term + '</a>,  ';
                }
             var l = pll.lastIndexOf(',');
             if (l != -1) { pll = pll.substring(0,l); }
@@ -172,20 +172,20 @@ function displayToc(filter) {
    var tocHead3 = 'LABEL';
    var tocTool3 = '';
    if (sortBy == "titleasc") { 
-      tocTool1 += ' (giảm dần)';
-      tocTool2 += ' (mới nhất)';
+      tocTool1 += ' (mengurangi)';
+      tocTool2 += ' (terbaru)';
    }
    if (sortBy == "titledesc") { 
-      tocTool1 += ' (tăng dần)';
-      tocTool2 += ' (mới nhất)';
+      tocTool1 += ' (mengurangi)';
+      tocTool2 += ' (terbaru)';
    }
    if (sortBy == "dateoldest") { 
-      tocTool1 += ' (tăng dần)';
-      tocTool2 += ' (mới nhất)';
+      tocTool1 += ' (mengurangi)';
+      tocTool2 += ' (terbaru)';
    }
    if (sortBy == "datenewest") { 
-      tocTool1 += ' (tăng dần)';
-      tocTool2 += ' (cũ nhất)';
+      tocTool1 += ' (mengurangi)';
+      tocTool2 += ' (terbaru)';
    }
    if (postFilter != '') {
       tocTool3 = 'Klik untuk menampilkan semua posting';
@@ -218,8 +218,8 @@ function displayToc(filter) {
    if (numDisplayed == postTitle.length) {
       var tocNote = '<span class="toc-note">Menampilkan ' + postTitle.length + ' siaran.<br/><br/></span>'; }
    else {
-      var tocNote = '<span class="toc-note">Hiển thị ' + numDisplayed + ' bài viết có nhãn \'';
-      tocNote += postFilter + '\' trong tổng số '+ postTitle.length + ' bài viết<br/><br/></span>';
+      var tocNote = '<span class="toc-note">Menampilkan ' + numDisplayed + ' siaran \'';
+      tocNote += postFilter + '\' secara keseluruhan '+ postTitle.length + ' siaran<br/><br/></span>';
    }
    tocdiv.innerHTML = tocNote + tocTable;
 } // end of displayToc
@@ -244,12 +244,12 @@ function showToc() {
      var toclink = document.getElementById("toclink");
    
   }
-  else { alert("Just wait... TOC is loading"); }
+  else { alert("Tunggu... daftar sedang dimuat."); }
 }
 
 function hideToc() {
   var tocdiv = document.getElementById("toc");
   tocdiv.innerHTML = '';
   var toclink = document.getElementById("toclink");
-  toclink.innerHTML = '<a href="#" onclick="scroll(0,0); showToc(); Effect.toggle('+"'toc-result','blind');"+'">» Hiển thị mục lục</a> <img src="https://3.bp.blogspot.com/-OJVzWx2-ubY/Wxga_uZJTTI/AAAAAAAALlY/O3SvsrILwRMUSam-7hqH1TxevLrWJr_GACLcBGAs/s1600/new_1.gif"/>';
+  toclink.innerHTML = '<a href="#" onclick="scroll(0,0); showToc(); Effect.toggle('+"'toc-result','blind');"+'">» Tunjukkan daftar isi</a> <img src="https://3.bp.blogspot.com/-OJVzWx2-ubY/Wxga_uZJTTI/AAAAAAAALlY/O3SvsrILwRMUSam-7hqH1TxevLrWJr_GACLcBGAs/s1600/new_1.gif"/>';
 }
