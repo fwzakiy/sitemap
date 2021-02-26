@@ -216,10 +216,10 @@ function displayToc(filter) {
    }
    tocTable += '</table>';
    if (numDisplayed == postTitle.length) {
-      var tocNote = '<span class="toc-note">Menampilkan ' + postTitle.length + ' siaran.<br/><br/></span>'; }
+      var tocNote = '<span class="toc-note">Menampilkan ' + postTitle.length + ' judul.<br/><br/></span>'; }
    else {
-      var tocNote = '<span class="toc-note">Menampilkan ' + numDisplayed + ' siaran \'';
-      tocNote += postFilter + '\' secara keseluruhan '+ postTitle.length + ' siaran<br/><br/></span>';
+      var tocNote = '<span class="toc-note">Menampilkan ' + numDisplayed + ' judul \'';
+      tocNote += postFilter + '\' secara keseluruhan '+ postTitle.length + ' judul<br/><br/></span>';
    }
    tocdiv.innerHTML = tocNote + tocTable;
 } // end of displayToc
